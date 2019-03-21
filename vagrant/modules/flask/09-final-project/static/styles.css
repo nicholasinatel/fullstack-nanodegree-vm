@@ -1,0 +1,14 @@
+.body-theme {
+    background: linear-gradient(white 20%, gray 100%);
+    min-width: 100%;
+    height: 100%;
+}
+
+#body-container {
+    background: none;
+}
+
+.i-am-centered {
+    margin: auto;
+    max-width: 50%;
+}
