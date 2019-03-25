@@ -1,0 +1,16 @@
+{% for restaurant in restaurants %}
+        <div class="row tim-row">
+            <div class="col-lg-6 col-md-6 col-sm-6">
+                <a class="btn btn-warning" href='{{url_for('showMenu', restaurant_id = restaurant.id)}}'>{{restaurant.name}}</a>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-3">
+                <a class="btn btn-primary" href='{{url_for('editRestaurant', restaurant_id=restaurant.id)}}'> Edit
+                </a>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-3">
+                <a class="btn btn-info" href='{{url_for('deleteRestaurant', restaurant_id=restaurant.id)}}'> Delete
+                </a>
+            </div>
+        </div>
+        {% endfor %}
+        <a class="btn btn-danger" href="{{url_for('newRestaurant')}}">Create New Restaurant</a>
