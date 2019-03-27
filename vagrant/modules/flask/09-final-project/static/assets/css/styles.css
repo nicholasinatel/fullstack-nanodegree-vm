@@ -1,0 +1,11 @@
+.center-children .thumbnail{
+    height: 260px;
+}
+
+#main-title {
+    display: block;
+}
+
+#restaurants {
+    display: none;
+}
