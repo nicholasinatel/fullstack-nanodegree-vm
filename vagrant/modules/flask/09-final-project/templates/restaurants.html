@@ -20,11 +20,9 @@
     <link href="static/assets/css/demo.css" rel="stylesheet" />
     <link href="static/assets/css/styles.css" rel="stylesheet" />
 
-
     <!--     Font Awesome     -->
     <link href="static/bootstrap3/css/font-awesome.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Grand+Hotel' rel='stylesheet' type='text/css'>
-
 </head>
 
 <body>
@@ -55,10 +53,10 @@
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav navbar-right">
-                            <li><a href="components.html">Home</a></li>
+                            <li><a id="anchor-home" href="#main-title">Home</a></li>
 
-                            <li><a href="#restaurants" id="display-restaurant"
-                                    >Restaurants</a></li>
+                            <li><a id="anchor-restaurants" href="#restaurants" id="display-restaurant">Restaurants</a>
+                            </li>
                         </ul>
 
                     </div><!-- /.navbar-collapse -->
@@ -67,65 +65,49 @@
         </div><!--  end container-->
     </div>
     <div class="main">
-        <div class='blurred-container' id="main-title">
-            <div class="motto">
-                <div>Restaurant Menu Item App</div>
+        <div class='blurred-container'>
+            <div id="main-title">
+                <div class="motto">
+                    <div>Restaurant Menu Item App</div>
+                </div>
             </div>
             <div class="img-src" style="background-image: url('static/assets/img/menu-background5.jpg')"></div>
             <div class='img-src blur' style="background-image: url('static/assets/img/cover_4_blur.jpg')"></div>
-        </div>
-        <div class="container" id="restaurants">
-            <div class="row tim-row">
-                {% for restaurant in restaurants %}
-                <div class="col-sm-6 col-md-4 col-lg-4 center-children">
-                    <div class="thumbnail">
-                        <div class="caption">
-                            <h3>{{restaurant.name}}</h3>
-                            <p><a class="btn btn-warning"
-                                    href='{{url_for('showMenu', restaurant_id = restaurant.id)}}'>Menu</a></p>
-                            <p><a class="btn btn-primary"
-                                    href='{{url_for('editRestaurant', restaurant_id=restaurant.id)}}'>
-                                    Edit
-                                </a></p>
-                            <p><a class="btn btn-info"
-                                    href='{{url_for('deleteRestaurant', restaurant_id=restaurant.id)}}'>
-                                    Delete
-                                </a></p>
+            <div class="container" id="restaurants">
+                <div class="row tim-row">
+                    <div class="motto">
+                        <div>Restaurants</div>
+                        {% for restaurant in restaurants %}
+                        <div class="col-sm-6 col-md-4 col-lg-4 center-children">
+                            <div class="thumbnail">
+                                <div class="caption">
+                                    <h3>{{restaurant.name}}</h3>
+                                    <p><a class="btn btn-warning"
+                                            href='{{url_for('showMenu', restaurant_id = restaurant.id)}}'>Menu</a></p>
+                                    <p><a class="btn btn-primary"
+                                            href='{{url_for('editRestaurant', restaurant_id=restaurant.id)}}'>
+                                            Edit
+                                        </a></p>
+                                    <p><a class="btn btn-info"
+                                            href='{{url_for('deleteRestaurant', restaurant_id=restaurant.id)}}'>
+                                            Delete
+                                        </a></p>
+                                </div>
+                            </div>
                         </div>
+                        {% endfor %}
                     </div>
                 </div>
-                {% endfor %}
+                <a class="btn btn-danger" href="{{url_for('newRestaurant')}}">Create New Restaurant</a>
             </div>
-            <a class="btn btn-danger" href="{{url_for('newRestaurant')}}">Create New Restaurant</a>
         </div>
-        <!--div class="container">
-            {% for restaurant in restaurants %}
-            <div class="row tim-row">
-                <div class="col-lg-4 col-md-4 col-sm-4 center-children">
-                    <a class="btn btn-warning"
-                        href='{{url_for('showMenu', restaurant_id = restaurant.id)}}'>{{restaurant.name}}</a>
-                </div>
-                <div class="col-lg-4 col-md-4 col-sm-4 center-children">
-                    <a class="btn btn-primary" href='{{url_for('editRestaurant', restaurant_id=restaurant.id)}}'>
-                        Edit
-                    </a>
-                </div>
-                <div class="col-lg-4 col-md-4 col-sm-4 center-children">
-                    <a class="btn btn-info" href='{{url_for('deleteRestaurant', restaurant_id=restaurant.id)}}'>
-                        Delete
-                    </a>
-                </div>
-            </div>
-            {% endfor %}
-            <a class="btn btn-danger" href="{{url_for('newRestaurant')}}">Create New Restaurant</a>
-        </div-->
     </div>
 
 </body>
 
 
 
-<script type="text/javascript" src="static/bootstrap3/js/bootstrap.js" ></script>
+<script type="text/javascript" src="static/bootstrap3/js/bootstrap.js"></script>
 <!--script type="text/javascript" src="{{url_for('static', filename='/static/assets/js/bootstrap.js')}}"></script>-->
 
 <script type="text/javascript" src="static/assets/js/gsdk-checkbox.js"></script>
@@ -140,9 +122,8 @@
 <script type="text/javascript" src="static/assets/js/get-shit-done.js"></script>
 <!--script type="text/javascript" src="{{url_for('static', filename='/static/assets/js/get-shit-done.js')}}"></script>-->
 
-<script type="text/javascript" src="/static/assets/js/custom.js" ></script>
+<script type="text/javascript" src="/static/assets/js/custom.js"></script>
 <!--script type="text/javascript" src="{{url_for('static', filename='/static/assets/js/custom.js')}}"></script>-->
 
 
 </html>
-

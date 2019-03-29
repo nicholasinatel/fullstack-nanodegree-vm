@@ -6,5 +6,15 @@ $(window).scroll(function (e) {
     $(".blur").css("opacity", oVal);
 
 });
-
-console.log("TESTE!!")
+$(document).ready(function () {
+    $('#anchor-restaurants').click( function(){
+        console.log("teste");
+        $('#main-title').css('display', 'none');
+        $('#restaurants').css('display', 'block');
+    });
+    $('#anchor-home').click( function(){
+        console.log("teste");
+        $('#main-title').css('display', 'block');
+        $('#restaurants').css('display', 'none');
+    });
+});

@@ -224,10 +224,10 @@ input.ct-red + span + label + span.switch-right {
     outline: 0 !important; }
 
 .btn-primary {
-  border-color: #3472F7;
-  color: #3472F7; }
+  border-color: #FF75B9;
+  color: #FF75B9; }
   .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .btn-primary:active:focus, .btn-primary:active:hover, .btn-primary.active:focus, .btn-primary.active:hover, .open > .btn-primary.dropdown-toggle, .open > .btn-primary.dropdown-toggle:focus, .open > .btn-primary.dropdown-toggle:hover {
-    background-color: #1D62F0;
+    background-color: #FF1D8C;
     color: white;
     border-color: white; }
   .btn-primary.disabled, .btn-primary.disabled:hover, .btn-primary.disabled:focus, .btn-primary.disabled.focus, .btn-primary.disabled:active, .btn-primary.disabled.active, .btn-primary:disabled, .btn-primary:disabled:hover, .btn-primary:disabled:focus, .btn-primary:disabled.focus, .btn-primary:disabled:active, .btn-primary:disabled.active, .btn-primary[disabled], .btn-primary[disabled]:hover, .btn-primary[disabled]:focus, .btn-primary[disabled].focus, .btn-primary[disabled]:active, .btn-primary[disabled].active, fieldset[disabled] .btn-primary, fieldset[disabled] .btn-primary:hover, fieldset[disabled] .btn-primary:focus, fieldset[disabled] .btn-primary.focus, fieldset[disabled] .btn-primary:active, fieldset[disabled] .btn-primary.active {
@@ -270,10 +270,10 @@ input.ct-red + span + label + span.switch-right {
     border-top-color: #05AE0E; }
 
 .btn-info {
-  border-color: #2CA8FF;
-  color: #2CA8FF; }
+  border-color: #FF8275;
+  color: #FF8275; }
   .btn-info:hover, .btn-info:focus, .btn-info:active, .btn-info.active, .btn-info:active:focus, .btn-info:active:hover, .btn-info.active:focus, .btn-info.active:hover, .open > .btn-info.dropdown-toggle, .open > .btn-info.dropdown-toggle:focus, .open > .btn-info.dropdown-toggle:hover {
-    background-color: #109CFF;
+    background-color: #FF1800;
     color: white;
     border-color: white; }
   .btn-info.disabled, .btn-info.disabled:hover, .btn-info.disabled:focus, .btn-info.disabled.focus, .btn-info.disabled:active, .btn-info.disabled.active, .btn-info:disabled, .btn-info:disabled:hover, .btn-info:disabled:focus, .btn-info:disabled.focus, .btn-info:disabled:active, .btn-info:disabled.active, .btn-info[disabled], .btn-info[disabled]:hover, .btn-info[disabled]:focus, .btn-info[disabled].focus, .btn-info[disabled]:active, .btn-info[disabled].active, fieldset[disabled] .btn-info, fieldset[disabled] .btn-info:hover, fieldset[disabled] .btn-info:focus, fieldset[disabled] .btn-info.focus, fieldset[disabled] .btn-info:active, fieldset[disabled] .btn-info.active {
@@ -293,10 +293,10 @@ input.ct-red + span + label + span.switch-right {
     border-top-color: #2CA8FF; }
 
 .btn-warning {
-  border-color: rgb(255, 0, 0);
-  color: rgb(255, 0, 0); }
+  border-color: #FF8B1D;
+  color: #FF8B1D; }
   .btn-warning:hover, .btn-warning:focus, .btn-warning:active, .btn-warning.active, .btn-warning:active:focus, .btn-warning:active:hover, .btn-warning.active:focus, .btn-warning.active:hover, .open > .btn-warning.dropdown-toggle, .open > .btn-warning.dropdown-toggle:focus, .open > .btn-warning.dropdown-toggle:hover {
-    background-color: rgb(255, 0, 0);
+    background-color: #FF8B1D;
     color: white;
     border-color: white; }
   .btn-warning.disabled, .btn-warning.disabled:hover, .btn-warning.disabled:focus, .btn-warning.disabled.focus, .btn-warning.disabled:active, .btn-warning.disabled.active, .btn-warning:disabled, .btn-warning:disabled:hover, .btn-warning:disabled:focus, .btn-warning:disabled.focus, .btn-warning:disabled:active, .btn-warning:disabled.active, .btn-warning[disabled], .btn-warning[disabled]:hover, .btn-warning[disabled]:focus, .btn-warning[disabled].focus, .btn-warning[disabled]:active, .btn-warning[disabled].active, fieldset[disabled] .btn-warning, fieldset[disabled] .btn-warning:hover, fieldset[disabled] .btn-warning:focus, fieldset[disabled] .btn-warning.focus, fieldset[disabled] .btn-warning:active, fieldset[disabled] .btn-warning.active {
