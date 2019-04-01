@@ -14,3 +14,8 @@
 div .thumbnail {
     border-radius: 40px;
 }
+
+.final-button {
+    font-size: 48px;
+    text-align: center;
+}

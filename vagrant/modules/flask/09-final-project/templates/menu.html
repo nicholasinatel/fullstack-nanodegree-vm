@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8" />
     <link rel="apple-touch-icon" sizes="76x76" href="static/assets/img/apple-icon.png">
@@ -11,16 +12,15 @@
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
     <meta name="viewport" content="width=device-width" />
 
-    <!--script type="text/javascript" src="{{url_for('static', filename='assets/js/jquery-ui-1.10.4.custom.min.js')}}"></script>-->
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-    <link href="static/bootstrap3/css/bootstrap.css" rel="stylesheet" />
-    <link href="static/assets/css/gsdk.css" rel="stylesheet" />
-    <link href="static/assets/css/demo.css" rel="stylesheet" />
-    <link href="static/assets/css/styles.css" rel="stylesheet" />
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename = 'bootstrap3/css/bootstrap.css') }}" />
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename = 'assets/css/gsdk.css') }}" />
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename = 'assets/css/demo.css') }}" />
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename = 'assets/css/styles.css') }}" />
 
     <!--     Font Awesome     -->
-    <link href="static/bootstrap3/css/font-awesome.css" rel="stylesheet">
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename = 'bootstrap3/css/font-awesome.css') }}" />
     <link href='http://fonts.googleapis.com/css?family=Grand+Hotel' rel='stylesheet' type='text/css'>
 </head>
 
@@ -41,7 +41,7 @@
                         <a href="http://nicklobo.com.br">
                             <div class="logo-container">
                                 <div class="logo">
-                                    <img src="static/assets/img/logo.png">
+                                    <img src="{{url_for('static', filename='assets/img/logo.png')}}">
                                 </div>
                                 <div class="brand">
                                     Nicholas Lobo
@@ -52,9 +52,9 @@
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav navbar-right">
-                            <li><a id="anchor-home" href="#main-title">Home</a></li>
+                            <li><a id="anchor-home" href="/">Home</a></li>
 
-                            <li><a id="anchor-restaurants" href="#restaurants" id="display-restaurant">Restaurants</a>
+                            <li><a id="anchor-restaurants" href="/restaurants" id="display-restaurant">Restaurants</a>
                             </li>
                         </ul>
 
@@ -65,33 +65,37 @@
     </div>
     <div class="main">
         <div class='blurred-container'>
+            <img class="img-src" src="{{url_for('static', filename='assets/img/menu-background5.jpg')}}">
+            <img class="img-src blur" src="{{url_for('static', filename='assets/img/menu-background5-blur.jpg')}}">
             <div id="main-title">
-                <div class="motto">
+                <div class="motto limit-me">
                     <div>{{restaurant.name}}</div>
                     {% for item in items %}
                     <div>
-                        <p>{{item.name}}</p>
+                        <h3>{{item.name}}</h3>
                         <p>{{item.description}}</p>
                         <p>{{item.price}}</p>
-                        <a href='{{url_for('editMenuItem', restaurant_id = restaurant.id, menu_id = item.id)}}'> Edit
-                        </a>
-                        <a href='{{url_for('deleteMenuItem', restaurant_id = restaurant.id, menu_id = item.id)}}'>
-                            Delete </a>
+                        <p><a class="btn btn-success" href='{{url_for('editMenuItem', restaurant_id = restaurant.id, menu_id = item.id)}}'>
+                                Edit </a></p>
+                        <p><a class="btn btn-danger" href='{{url_for('deleteMenuItem', restaurant_id = restaurant.id, menu_id = item.id)}}'>
+                                Delete </a></p>
                         </br>
                     </div>
                     {% endfor %}
                     </br>
-                    <a href='{{url_for('newMenuItem', restaurant_id = restaurant.id)}}'>Add New MenuItem</a>
+                    <div class="final-button">
+                        <a href='{{url_for('newMenuItem', restaurant_id = restaurant.id)}}'>Add New MenuItem</a>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </body>
-<script type="text/javascript" src="static/bootstrap3/js/bootstrap.js"></script>
-<script type="text/javascript" src="static/assets/js/gsdk-checkbox.js"></script>
-<script type="text/javascript" src="static/assets/js/gsdk-radio.js"></script>-->
-<script type="text/javascript" src="static/assets/js/gsdk-bootstrapswitch.js"></script>
-<script type="text/javascript" src="static/assets/js/get-shit-done.js"></script>
-<script type="text/javascript" src="/static/assets/js/custom.js"></script>
+<script type="text/javascript" src="{{ url_for('static', filename = 'bootstrap3/js/bootstrap.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename = 'assets/js/gsdk-checkbox.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename = 'assets/js/gsdk-radio.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename = 'assets/js/gsdk-bootstrapswitch.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename = 'assets/js/get-shit-done.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename = 'assets/js/custom.js') }}"></script>
 
 </html>

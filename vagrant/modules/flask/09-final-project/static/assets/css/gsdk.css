@@ -248,14 +248,15 @@ input.ct-red + span + label + span.switch-right {
 
 .btn-success {
   border-color: #05AE0E;
-  color: #05AE0E; }
+  color: #05AE0E; 
+  width: auto; }
   .btn-success:hover, .btn-success:focus, .btn-success:active, .btn-success.active, .btn-success:active:focus, .btn-success:active:hover, .btn-success.active:focus, .btn-success.active:hover, .open > .btn-success.dropdown-toggle, .open > .btn-success.dropdown-toggle:focus, .open > .btn-success.dropdown-toggle:hover {
-    background-color: transparent;
-    color: #049F0C;
-    border-color: #049F0C; }
+    background-color: #049F0C;
+    color: white;
+    border-color: white; }
   .btn-success.disabled, .btn-success.disabled:hover, .btn-success.disabled:focus, .btn-success.disabled.focus, .btn-success.disabled:active, .btn-success.disabled.active, .btn-success:disabled, .btn-success:disabled:hover, .btn-success:disabled:focus, .btn-success:disabled.focus, .btn-success:disabled:active, .btn-success:disabled.active, .btn-success[disabled], .btn-success[disabled]:hover, .btn-success[disabled]:focus, .btn-success[disabled].focus, .btn-success[disabled]:active, .btn-success[disabled].active, fieldset[disabled] .btn-success, fieldset[disabled] .btn-success:hover, fieldset[disabled] .btn-success:focus, fieldset[disabled] .btn-success.focus, fieldset[disabled] .btn-success:active, fieldset[disabled] .btn-success.active {
-    background-color: transparent;
-    border-color: #05AE0E; }
+    background-color: #05AE0E;
+    border-color: white; }
   .btn-success.btn-fill {
     color: #FFFFFF;
     background-color: #05AE0E;
@@ -317,11 +318,12 @@ input.ct-red + span + label + span.switch-right {
 
 .btn-danger {
   border-color: #FF3B30;
-  color: #FF3B30; }
+  color: #FF3B30; 
+  width: auto; }
   .btn-danger:hover, .btn-danger:focus, .btn-danger:active, .btn-danger.active, .btn-danger:active:focus, .btn-danger:active:hover, .btn-danger.active:focus, .btn-danger.active:hover, .open > .btn-danger.dropdown-toggle, .open > .btn-danger.dropdown-toggle:focus, .open > .btn-danger.dropdown-toggle:hover {
-    background-color: transparent;
-    color: #EE2D20;
-    border-color: #EE2D20; }
+    background-color: #EE2D20;
+    color: white;
+    border-color: white; }
   .btn-danger.disabled, .btn-danger.disabled:hover, .btn-danger.disabled:focus, .btn-danger.disabled.focus, .btn-danger.disabled:active, .btn-danger.disabled.active, .btn-danger:disabled, .btn-danger:disabled:hover, .btn-danger:disabled:focus, .btn-danger:disabled.focus, .btn-danger:disabled:active, .btn-danger:disabled.active, .btn-danger[disabled], .btn-danger[disabled]:hover, .btn-danger[disabled]:focus, .btn-danger[disabled].focus, .btn-danger[disabled]:active, .btn-danger[disabled].active, fieldset[disabled] .btn-danger, fieldset[disabled] .btn-danger:hover, fieldset[disabled] .btn-danger:focus, fieldset[disabled] .btn-danger.focus, fieldset[disabled] .btn-danger:active, fieldset[disabled] .btn-danger.active {
     background-color: transparent;
     border-color: #FF3B30; }
