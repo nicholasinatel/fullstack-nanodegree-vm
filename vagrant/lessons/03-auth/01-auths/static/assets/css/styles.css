@@ -1,0 +1,21 @@
+.center-children .thumbnail{
+    height: 260px;
+}
+
+#main-title {
+    display: block;
+}
+
+#restaurants {
+    display: none;
+    padding-top: 0px;
+}
+
+div .thumbnail {
+    border-radius: 40px;
+}
+
+.final-button {
+    font-size: 48px;
+    text-align: center;
+}
