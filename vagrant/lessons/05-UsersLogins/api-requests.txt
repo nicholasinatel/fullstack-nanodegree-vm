@@ -1,0 +1,42 @@
+Google Maps
+https://maps.googleapis.com/maps/api/geocode/json?address=Tokyo+Japan&key=AIzaSyAwb-__2M4kuvmelq3CI7FIfZjV0ZglKi4
+
+https://maps.googleapis.com/maps/api/geocode/json?address=Jakarta+Indonesia&key=AIzaSyAwb-__2M4kuvmelq3CI7FIfZjV0ZglKi4
+
+https://maps.googleapis.com/maps/api/geocode/json?address=Maputo+Mozambique&key=AIzaSyAwb-__2M4kuvmelq3CI7FIfZjV0ZglKi4
+
+https://maps.googleapis.com/maps/api/geocode/json?address=Geneva+Switzerland&key=AIzaSyAwb-__2M4kuvmelq3CI7FIfZjV0ZglKi4
+
+https://maps.googleapis.com/maps/api/geocode/json?address=Los Angeles+California+USA&key=AIzaSyAwb-__2M4kuvmelq3CI7FIfZjV0ZglKi4
+
+FourSquare
+Make Your First API Call
+
+Using your client ID and secret, let's make our first API call! 
+The examples below show you how to find a coffee shop near a given location.
+cURL
+
+curl -X GET -G \
+  'https://api.foursquare.com/v2/venues/explore' \
+    -d client_id="CLIENT_ID" \
+    -d client_secret="CLIENT_SECRET" \
+    -d v="20180323" \
+    -d ll="40.7243,-74.0018" \
+    -d query="coffee" \
+    -d limit=1
+
+
+curl -X GET -G \
+  'https://api.foursquare.com/v2/venues/explore' \
+    -d client_id="EE24NJZ4PU4LJAG2NUDL3GHV55CQJ0VHM20VIM5G1UXYLRKT" \
+    -d client_secret="I4E51LOHGMUY5XKL24YVXUWDQQT55QGLHHVFJOBAFJ5OXOE1" \
+    -d v="20180323" \
+    -d ll="40.768349,-73.96575" \
+    -d query="restaurant" \
+    -d limit=1
+
+
+California (37.392971, -122.076044)
+Miami, Florida (25.773822, -80.237947)
+Washington, DC (38.897478, -77.000147)
+New York, New York (40.768349, -73.96575)
