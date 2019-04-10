@@ -1,0 +1,19 @@
+<html>
+<body>
+    <h1>Edit Item</h1>
+    <form method='POST'>
+        <p>Name:</p>
+        <input type='text' size='30' name='name' placeholder='{{item_edit.name}}'>
+        <p>Active:</p>
+        <input type='text' size='30' name='active' placeholder='{{item_edit.active}}'>
+        <p>Dividend Yield:</p>
+        <input type='text' size='30' name='dy' placeholder='{{item_edit.dy}}'>
+        <p>Price:</p>
+        <input type='text' size='30' name='price' placeholder='{{item_edit.price}}'>
+        <p>Description:</p>
+        <input type='text' size='300' name='description' placeholder='{{item_edit.description}}'>
+        <input type='submit' value='Edit'>
+    </form>
+    <a href="{{url_for('showItem', category_id=category_id)}}">Cancel</a>
+</body>
+</html>

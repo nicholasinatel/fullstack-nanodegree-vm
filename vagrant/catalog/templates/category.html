@@ -1,0 +1,18 @@
+<html>
+<body>
+    <h1>Carteiras De Investimentos</h1>
+    <h2>Categorias</h2>
+    {% for category in categories %}
+    <div>
+        <a href='{{url_for('showItem', category_id = category.id) }}'>Show</a>
+        </br>
+        <p>{{category.name}}</p>
+        <p>{{category.description}}</p>
+        <a href='{{url_for('editCategory', category_id = category.id) }}'>Edit</a>
+        </br>
+        <a href='{{url_for('deleteCategory', category_id = category.id) }}'>Delete</a>
+    </div>
+    {% endfor %}
+    <a href='{{url_for('newCategory') }}'>New Category</a>
+</body>
+</html>

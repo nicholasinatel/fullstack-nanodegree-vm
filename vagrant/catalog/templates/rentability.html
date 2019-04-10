@@ -1,0 +1,22 @@
+<html>
+
+<body>
+    <h1>Carteira De {{category.name}}</h1>
+    <h2>Ativo {{item.name}}</h2>
+
+
+    {% for renda in rendas %}
+    <div>
+        <p>{{renda.month}}</p>
+        <p>{{renda.money}}</p>
+        <p>{{renda.percent}}</p>
+        <a href='{{url_for('editRentability', category_id = category.id, item_id = item.id, rentability_id = renda.id) }}'>Edit</a>
+        </br>
+        <a href='{{url_for('deleteRentability', category_id = category.id, item_id = item.id, rentability_id = renda.id) }}'>Delete</a>
+    </div>
+    {% endfor %}
+    <a href='{{url_for('newRentability', category_id = category.id, item_id = item.id) }}'>New Rentability</a>
+    <a href="{{url_for('showItem', category_id=category.id)}}">Go Back to Item</a>
+</body>
+
+</html>

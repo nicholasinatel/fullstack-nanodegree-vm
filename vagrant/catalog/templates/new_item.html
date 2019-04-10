@@ -1,0 +1,21 @@
+<html>
+
+<body>
+    <h1>New Item?</h1>
+    <form method='POST'>
+        <p>Name:</p>
+        <input type="text" size='30' name='name' placeholder="Nome da Empresa SA"> 
+        <p>Active:</p>
+        <input type="text" size='30' name='active' placeholder="NESA11"> 
+        <p>Dividend Yield:</p>
+        <input type="text" size='10' name='dy' placeholder="0.0%"> 
+        <p>Price:</p>
+        <input type="text" size='10' name='price' placeholder="R$0,99"> 
+        <p>Description:</p>
+        <input type="text" size='300' name='description' placeholder="Nome da Empresa SA atua no ramo de nomes de empresa SA"> 
+        <input type='submit' value='Create'>
+    </form>
+    <a href='{{url_for('showCategories')}}'>Cancel</a>
+</body>
+
+</html>

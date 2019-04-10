@@ -11,7 +11,7 @@ import sys
 # For Handling Unicode In SQL and Python
 from sqlalchemy.types import TypeDecorator, Unicode
 # For the Mapper code
-from sqlalchemy import Column, ForeignKey, Integer, String
+from sqlalchemy import Column, ForeignKey, Integer, String, Float
 # Declarative base for the configuration and class code
 from sqlalchemy.ext.declarative import declarative_base
 # Foreign Key for the Mapper
@@ -38,15 +38,18 @@ class CoerceUTF8(TypeDecorator):
 
 class Category(Base):
     __tablename__ = 'category'
+    id = Column(Integer, primary_key=True)
     name = Column(CoerceUTF8, nullable=False)
+    description = Column(CoerceUTF8)
     # This COlumn has strin with max 80 characters,
     # and nullable = false means not allowed to create withou name
-    id = Column(Integer, primary_key=True)
+    
 
     @property
     def serialize(self):
         return {
-            'name': self.name
+            'name': self.name,
+            'description': self.description
         }
 
 
@@ -58,8 +61,7 @@ class Item(Base):
     dy = Column(String(10))
     price = Column(String(10))
     description = Column(CoerceUTF8)
-    # Creates foreign key relationship between tables
-    category_id = Column(Integer, ForeignKey('category.id'))
+    category_id = Column(Integer, ForeignKey('category.id')) # Creates foreign key relationship between tables
     # takes the relationship to the class
     category = relationship(Category)
 
@@ -75,6 +77,24 @@ class Item(Base):
             'description': self.description
         }
 
+class Rentability(Base):
+    __tablename__ = 'rentability'
+    id = Column(Integer, primary_key=True)
+    month = Column(String(5), nullable=False)
+    money = Column(Float)
+    percent = Column(Float)
+    item_id = Column(Integer, ForeignKey('item.id'))
+    item = relationship(Item)
+
+    @property
+    def serialize(self):
+        # Returns object data in easily serializeable format
+        return {
+            'id': self.id,
+            'month': self.month,
+            'money': self.money,
+            'percent': self.percent,
+        }
 
 # Create an instance of our create_engine class and point a DB to use
 engine = create_engine('sqlite:///catalog.db')

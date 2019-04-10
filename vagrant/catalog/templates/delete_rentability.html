@@ -1,0 +1,10 @@
+<html>
+<body>
+    <h1> Are you sure you want to delete</h1>
+    <h2>{{rentability_delete.month}}?</h2>
+    <form method='POST'>
+        <input type='submit' , value='Delete'>
+    </form>
+    <a href='{{url_for('showRentability', category_id=category_id, item_id=item_id)}}'>Cancel</a>
+</body>
+</html>

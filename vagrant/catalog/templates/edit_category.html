@@ -1,0 +1,13 @@
+<html>
+<body>
+    <h1>Edit Category</h1>
+    <form method='POST'>
+        <p>Name:</p>
+        <input type='text' size='30' name='name' placeholder='{{category_edit.name}}'>
+        <p>Description:</p>
+        <input type='text' size='300' name='description' placeholder='{{category_edit.description}}'>
+        <input type='submit' value='Edit'>
+    </form>
+    <a href="{{url_for('showCategories')}}">Cancel</a>
+</body>
+</html>
