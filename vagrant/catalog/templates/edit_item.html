@@ -1,19 +1,46 @@
-<html>
-<body>
-    <h1>Edit Item</h1>
-    <form method='POST'>
-        <p>Name:</p>
-        <input type='text' size='30' name='name' placeholder='{{item_edit.name}}'>
-        <p>Active:</p>
-        <input type='text' size='30' name='active' placeholder='{{item_edit.active}}'>
-        <p>Dividend Yield:</p>
-        <input type='text' size='30' name='dy' placeholder='{{item_edit.dy}}'>
-        <p>Price:</p>
-        <input type='text' size='30' name='price' placeholder='{{item_edit.price}}'>
-        <p>Description:</p>
-        <input type='text' size='300' name='description' placeholder='{{item_edit.description}}'>
-        <input type='submit' value='Edit'>
-    </form>
-    <a href="{{url_for('showItem', category_id=category_id)}}">Cancel</a>
-</body>
-</html>
+{% extends "main.html" %}
+{% block content %}
+{% include "header.html" %}
+<div class="row divider green">
+    <div class="col-md-12"></div>
+</div>
+<div class="row banner menu">
+    <div class="col-md-11 col-md-offset-1 padding-none">
+        <h1>Edit Item</h1>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-6 col-md-offset-1 padding-top">
+        <form method='POST'>
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type='text' class="form-control" maxlength="100" name='name' placeholder='{{item_edit.name}}'>
+                <div class="padding-bottom"></div>
+
+                <label for="name">Active:</label>
+                <input type='text' size='30' class="form-control" name='active' placeholder='{{item_edit.active}}'>
+                <div class="padding-bottom"></div>
+
+                <label for="name">Dividend Yield:</label>
+                <input type='text' class="form-control" size='30' name='dy' placeholder='{{item_edit.dy}}'>
+                <div class="padding-bottom"></div>
+
+                <label for="name">Price:</label>
+                <input type='text' class="form-control" size='30' name='price' placeholder='{{item_edit.price}}'>
+                <div class="padding-bottom"></div>
+
+                <label for="name">Description:</label>
+                <input type='text' class="form-control" size='300' name='description'
+                    placeholder='{{item_edit.description}}'>
+                <div class="padding-bottom"></div>
+
+                <button type="submit" class="btn btn-default" id="submit" type="submit">
+                    <span class="glyphicon glyphicon-wrench" aria-hidden="true"></span>
+                    Edit
+                </button>
+            </div>
+        </form>
+        <a href="{{url_for('showItem', category_id=category_id)}}">Cancel</a>
+    </div>
+</div>
+{% endblock %}

@@ -1,21 +1,72 @@
-<html>
-<body>
-    <h1>Carteira De {{category.name}}</h1>
-    
-    {% for item in items %}
-    <div>
-        <a href='{{url_for('showRentability', category_id = category.id, item_id = item.id) }}'>Show</a>
-        <p>{{item.name}}</p>
-        <p>{{item.active}}</p>
-        <p>{{item.dy}}</p>
-        <p>{{item.price}}</p>
-        <p>{{item.description}}</p>
-        <a href='{{url_for('editItem', category_id = category.id, item_id = item.id) }}'>Edit</a>
-        </br>
-        <a href='{{url_for('deleteItem', category_id = category.id, item_id = item.id) }}'>Delete</a>
+{% extends "main.html" %}
+{% block content %}
+{% include "header.html" %}
+
+<div class="row banner main">
+    <div class="col-md-1"></div>
+    <div class="col-md-11 padding-none">
+        <h1>Carteira De {{category.name}}</h1>
     </div>
-    {% endfor %}
-    <a href='{{url_for('newItem', category_id = category.id) }}'>New Item</a>
-    <a href="{{url_for('showCategories')}}">Go Back To Your Wallets</a>
-</body>
-</html>
+</div>
+
+<div class='flash'>
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <ul>
+        {% for message in messages %}
+        <li> <strong> {{ message }} </strong> </li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    {% endwith %}
+</div>
+
+{% for item in items %}
+<div class="row padding-top padding-bottom">
+    <div class="col-md-3 col-sm-3 col-xs-6">
+        <p>{{item.name}}</p>
+    </div>
+    <div class="col-md-3 col-sm-3 col-xs-6">
+        <p>{{item.active}}</p>
+    </div>
+    <div class="col-md-3 col-sm-3 col-xs-6">
+        <p>{{item.dy}}</p>
+    </div>
+    <div class="col-md-3 col-sm-3 col-xs-6">
+        <p>{{item.price}}</p>
+    </div>
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        <p>{{item.description}}</p>
+    </div>
+</div>
+
+<div class="row padding-top padding-bottom">
+    <div class="col-md-10 padding-none center-me">
+        <a href='{{url_for('showRentability', category_id = category.id, item_id = item.id) }}'>
+            <button class="btn btn-default">
+                <span class="glyphicon glyphicon-align-justify" aria-hidden="true"></span>Display
+            </button>
+        </a>
+        <a href='{{url_for('editItem', category_id = category.id, item_id = item.id) }}'>
+            <button class="btn btn-default">
+                <span class="glyphicon glyphicon-wrench" aria-hidden="true"></span>Edit
+            </button>
+        </a>
+        <a href='{{url_for('deleteItem', category_id = category.id, item_id = item.id) }}'>
+            <button class="btn btn-default">
+                <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>Delete
+            </button>
+        </a>
+    </div>
+</div>
+<hr>
+{% endfor %}
+<div class="row main">
+    <a class="nick-button" href='{{url_for('newItem', category_id = category.id) }}'>
+        <button class="btn btn-default">
+            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>New Item
+        </button>
+    </a>
+</div>
+
+{% endblock %}

@@ -1,18 +1,68 @@
-<html>
-<body>
-    <h1>Carteiras De Investimentos</h1>
-    <h2>Categorias</h2>
-    {% for category in categories %}
-    <div>
-        <a href='{{url_for('showItem', category_id = category.id) }}'>Show</a>
-        </br>
-        <p>{{category.name}}</p>
-        <p>{{category.description}}</p>
-        <a href='{{url_for('editCategory', category_id = category.id) }}'>Edit</a>
-        </br>
-        <a href='{{url_for('deleteCategory', category_id = category.id) }}'>Delete</a>
+{% extends "main.html" %}
+{% block content %}
+{% include "header.html" %}
+<div class="row top-menu">
+    <div class="col-md-10"></div>
+    <div class="col-md-2 text-right">
     </div>
-    {% endfor %}
-    <a href='{{url_for('newCategory') }}'>New Category</a>
-</body>
-</html>
+</div>
+<div class="row divider blue">
+    <div class="col-md-12"></div>
+</div>
+<div class="row banner main">
+    <div class="col-md-1"></div>
+    <div class="col-md-11 padding-none">
+        <h1>Carteiras De Investimentos</h1>
+    </div>
+</div>
+<h2>Financial Wallets</h2>
+
+<div class='flash'>
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <ul>
+        {% for message in messages %}
+        <li> <strong> {{ message }} </strong> </li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    {% endwith %}
+</div>
+
+{% for category in categories %}
+
+<div class="row padding-top padding-bottom">
+    <div class="col-md-1"></div>
+    <p>{{category.name}}</p>
+    <p>{{category.description}}</p>
+    <div class="col-md-10 padding-none">
+
+        <a href='{{url_for('showItem', category_id = category.id) }}'>
+            <button class="btn btn-default">
+                <span class="glyphicon glyphicon-align-justify" aria-hidden="true"></span>Display
+            </button>
+        </a>
+        <a href='{{url_for('editCategory', category_id = category.id) }}'>
+            <button class="btn btn-default">
+                <span class="glyphicon glyphicon-wrench" aria-hidden="true"></span>Edit
+            </button>
+        </a>
+        <a href='{{url_for('deleteCategory', category_id = category.id) }}'>
+            <button class="btn btn-default">
+                <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>Delete
+            </button>
+        </a>
+    </div>
+
+</div>
+<hr>
+{% endfor %}
+<div class="row main">
+    <a class="nick-button" href='{{url_for('newCategory') }}'>
+        <button class="btn btn-default">
+            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>New Wallet
+        </button>
+    </a>
+</div>
+
+{% endblock %}

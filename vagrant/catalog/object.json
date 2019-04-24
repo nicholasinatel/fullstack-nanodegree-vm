@@ -1,0 +1,17 @@
+{
+    u'picture': u'https: //lh5.googleusercontent.com/-ttoEsdaXpo4/AAAAAAAAAAI/AAAAAAAAAD8/KdMT1iR6rKI/s96-c/photo.jpg', 
+    u'aud': u'913987806071-fc6ls1fbdhd0qfjbr8s95av9k3ahvqe0.apps.googleusercontent.com', 
+    u'family_name': u'Fernandes', 
+    u'iss': u'accounts.google.com', 
+    u'email_verified': True, 
+    u'name': u'Nicholas Fernandes', 
+    u'at_hash': u'HOcS4XEhrZf7d0BYE5au2g', 
+    u'jti': u'2dbb9cef25d16c6c407aa16fe7fc9c0cab4f7d40', 
+    u'given_name': u'Nicholas', 
+    u'exp': 1555980174, 
+    u'azp': u'913987806071-fc6ls1fbdhd0qfjbr8s95av9k3ahvqe0.apps.googleusercontent.com', 
+    u'iat': 1555976574, 
+    u'locale': u'en', 
+    u'email': u'niku01@gmail.com', 
+    u'sub': u'103631001388161920451'
+}

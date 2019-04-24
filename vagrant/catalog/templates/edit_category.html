@@ -1,13 +1,37 @@
-<html>
-<body>
-    <h1>Edit Category</h1>
-    <form method='POST'>
-        <p>Name:</p>
-        <input type='text' size='30' name='name' placeholder='{{category_edit.name}}'>
-        <p>Description:</p>
-        <input type='text' size='300' name='description' placeholder='{{category_edit.description}}'>
-        <input type='submit' value='Edit'>
-    </form>
-    <a href="{{url_for('showCategories')}}">Cancel</a>
-</body>
-</html>
+{% extends "main.html" %}
+{% block content %}
+{% include "header.html" %}
+<div class="row divider green">
+    <div class="col-md-12"></div>
+</div>
+<div class="row banner menu">
+    <div class="col-md-11 col-md-offset-1 padding-none">
+        <h1>Edit Category</h1>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-6 col-md-offset-1 padding-top">
+        <form method='POST'>
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" class="form-control" maxlength="100" name="name"
+                    placeholder='{{category_edit.name}}'>
+                <div class="padding-bottom"></div>
+
+                <label for="name">Description:</label>
+                <input type="text" class="form-control" maxlength="100" name="description"
+                    placeholder='{{category_edit.description}}'>
+                <div class="padding-bottom"></div>
+
+
+                <button type="submit" class="btn btn-default" id="submit" type="submit">
+                    <span class="glyphicon glyphicon-wrench" aria-hidden="true"></span>
+                    Edit
+                </button>
+            </div>
+        </form>
+        <a href="{{url_for('showCategories')}}">Cancel</a>
+    </div>
+</div>
+{% endblock %}

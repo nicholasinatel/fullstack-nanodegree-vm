@@ -1,18 +1,35 @@
-<html>
+{% extends "main.html" %}
+{% block content %}
+{% include "header.html" %}
+<div class="row divider green">
+    <div class="col-md-12"></div>
+</div>
+<div class="row banner menu">
+    <div class="col-md-11 col-md-offset-1 padding-none">
+        <h1>New Rentability?</h1>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-6 col-md-offset-1 padding-top">
+        <form method='POST'>
+            <div class="form-group">
+                <label for="name">Month:</label>
+                <input type="text" class="form-control" maxlength="30" name='month' placeholder="Mar">
+                <div class="padding-bottom"></div>
 
-<body>
-    <h1>New Rentability?</h1>
-    <form method='POST'>
-        <p>Month:</p>
-        <input type="text" size='30' name='month' placeholder="Mar"> 
-        <p>Money:</p>
-        <input type="number" step='0.01' min="0" name='money' placeholder="1.99"> 
-        <p>Percent:</p>
-        <input type="number" step='0.1' min="0" name='percent' placeholder="1.7"> 
+                <label for="name">Money:</label>
+                <input type="number" class="form-control" step='0.01' min="0" name='money' placeholder="1.99">
+                <div class="padding-bottom"></div>
 
-        <input type='submit' value='Create'>
-    </form>
-    <a href='{{url_for('showRentability', category_id=category_id, item_id=item_id)}}'>Cancel</a>
-</body>
+                <label for="name">Percent:</label>
+                <input type="number" class="form-control" step='0.1' min="0" name='percent' placeholder="1.7">
+                <div class="padding-bottom"></div>
 
-</html>
+                <button type="submit" class="btn btn-default" id="submit" type="submit">
+                    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>Create</button>
+            </div>
+        </form>
+        <a href='{{url_for('showRentability', category_id=category_id, item_id=item_id)}}'>Cancel</a>
+    </div>
+</div>
+{% endblock %}

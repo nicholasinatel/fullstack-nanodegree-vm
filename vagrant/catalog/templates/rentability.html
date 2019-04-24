@@ -1,22 +1,65 @@
-<html>
+{% extends "main.html" %}
+{% block content %}
+{% include "header.html" %}
 
-<body>
-    <h1>Carteira De {{category.name}}</h1>
-    <h2>Ativo {{item.name}}</h2>
-
-
-    {% for renda in rendas %}
-    <div>
-        <p>{{renda.month}}</p>
-        <p>{{renda.money}}</p>
-        <p>{{renda.percent}}</p>
-        <a href='{{url_for('editRentability', category_id = category.id, item_id = item.id, rentability_id = renda.id) }}'>Edit</a>
-        </br>
-        <a href='{{url_for('deleteRentability', category_id = category.id, item_id = item.id, rentability_id = renda.id) }}'>Delete</a>
+<div class="row banner main">
+    <div class="col-md-1"></div>
+    <div class="col-md-11 padding-none">
+        <h1>Carteira De {{category.name}}</h1>
+        <h2>Ativo {{item.name}}</h2>
     </div>
-    {% endfor %}
-    <a href='{{url_for('newRentability', category_id = category.id, item_id = item.id) }}'>New Rentability</a>
-    <a href="{{url_for('showItem', category_id=category.id)}}">Go Back to Item</a>
-</body>
+</div>
 
-</html>
+<div class='flash'>
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <ul>
+        {% for message in messages %}
+        <li> <strong> {{ message }} </strong> </li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    {% endwith %}
+</div>
+
+{% for renda in rendas %}
+<div class="row padding-top padding-bottom">
+    <div class="col-md-4 col-sm-3 col-xs-6">
+        <p>{{renda.month}}</p>
+    </div>
+    <div class="col-md-4 col-sm-3 col-xs-6">
+        <p>R${{renda.money}}</p>
+    </div>
+    <div class="col-md-4 col-sm-3 col-xs-6">
+        <p>{{renda.percent}}%</p>
+    </div>
+
+</div>
+<div class="row padding-top padding-bottom">
+    <div class="col-md-10 padding-none center-me">
+        <a
+            href='{{url_for('editRentability', category_id = category.id, item_id = item.id, rentability_id = renda.id) }}'>
+            <button class="btn btn-default">
+                <span class="glyphicon glyphicon-wrench" aria-hidden="true"></span>Edit
+            </button>
+        </a>
+
+        <a
+            href='{{url_for('deleteRentability', category_id = category.id, item_id = item.id, rentability_id = renda.id) }}'>
+            <button class="btn btn-default">
+                <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>Delete
+            </button>
+        </a>
+    </div>
+</div>
+
+{% endfor %}
+<div class="row main">
+    <a href='{{url_for('newRentability', category_id = category.id, item_id = item.id) }}'>
+        <button class="btn btn-default">
+            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>New Rentability
+        </button>
+    </a>
+</div>
+
+{% endblock %}
