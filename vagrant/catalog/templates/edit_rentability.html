@@ -14,17 +14,17 @@
         <form method='POST'>
             <div class="form-group">
                 <label for="name">Month:</label>
-                <input type="text" class="form-control" size='30' name='month' placeholder='{{rentability_edit.month}}'>
+                <input type="text" class="form-control" size='30' name='month' placeholder='{{rentability_edit.month}}' required>
                 <div class="padding-bottom"></div>
 
                 <label for="name">Money:</label>
                 <input type="number" class="form-control" step='0.01' min="0" name='money'
-                    placeholder='{{rentability_edit.active}}'>
+                    placeholder='{{rentability_edit.active}}' required>
                 <div class="padding-bottom"></div>
 
                 <label for="name">Percent:</label>
                 <input type="number" class="form-control" step='0.1' min="0" name='percent'
-                    placeholder='{{rentability_edit.dy}}'>
+                    placeholder='{{rentability_edit.dy}}' required>
                 <div class="padding-bottom"></div>
 
                 <button type="submit" class="btn btn-default" id="submit" type="submit">
