@@ -3,9 +3,9 @@
 # Class
 # Table
 # Mapper
-# --------------------------------
+# -------------------------------------------------------------------------------
 
-# CONFIGURATION --------------------------------------------------------------------------------
+# CONFIGURATION
 # sys module provides functions and variables to manipulate python environment
 import sys
 # For Handling Unicode In SQL and Python
@@ -22,8 +22,9 @@ from sqlalchemy import create_engine
 # Special Alchemy Classes - declarative_base to inherit
 Base = declarative_base()
 # CLASS ------------------------------------------------------
-# TABLE -------
+# TABLE
 # MAPPER
+
 
 class CoerceUTF8(TypeDecorator):
     """Safely coerce Python bytestrings to Unicode
@@ -36,6 +37,7 @@ class CoerceUTF8(TypeDecorator):
             value = value.decode('utf-8')
         return value
 
+
 class User(Base):
     __tablename__ = 'user'
 
@@ -43,6 +45,7 @@ class User(Base):
     name = Column(String(250), nullable=False)
     email = Column(String(250), nullable=False)
     picture = Column(String(250))
+
 
 class Category(Base):
     __tablename__ = 'category'
@@ -53,7 +56,7 @@ class Category(Base):
     user = relationship(User)
     # This COlumn has strin with max 80 characters,
     # and nullable = false means not allowed to create withou name
-    
+
     @property
     def serialize(self):
         return {
@@ -61,6 +64,7 @@ class Category(Base):
             'description': self.description,
             'user_id': self.user_id
         }
+
 
 class Item(Base):
     __tablename__ = 'item'
@@ -70,7 +74,8 @@ class Item(Base):
     dy = Column(String(10))
     price = Column(String(10))
     description = Column(CoerceUTF8)
-    category_id = Column(Integer, ForeignKey('category.id')) # Creates foreign key relationship between tables
+    category_id = Column(Integer, ForeignKey('category.id'))
+    # Creates foreign key relationship between tables
     # takes the relationship to the class
     category = relationship(Category)
     user_id = Column(Integer, ForeignKey('user.id'))
@@ -88,6 +93,7 @@ class Item(Base):
             'description': self.description,
             'user_id': self.user_id
         }
+
 
 class Rentability(Base):
     __tablename__ = 'rentability'
